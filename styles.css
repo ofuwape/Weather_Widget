@@ -1,0 +1,70 @@
+.content p {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    border: 2px solid;
+    border-radius: 10px;
+    height: 160px;
+    width: 320px;
+    border-color: grey;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 7px 7px 5px #888888;
+    background: white;
+    padding: 5px 10px 10px 10px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: absolute;               
+   top: 50%; 
+   bottom: 50%;                        
+   transform: translate(0, -50%);
+    
+}
+.location {
+    font-size: 140%;
+}
+.temp {
+    font-size: 430%;
+    font-weight: 500;
+    float: left;
+}
+.remtemps {
+    font-size: 80%;
+}
+#temps ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#temps li {
+    width: 20%;
+    display: inline;
+    list-style-type: none;
+    float: left;
+    text-align: center;
+}
+
+.divr{
+border-right: thin dotted grey;
+}
+
+.image {
+    float: left;
+    margin: 0 0 0 20px;
+}
+.caption {
+    font-size: 80%;
+}
+.content figure {
+    display: table;
+}
+.content figcaption {
+    margin: 0 0 0 20px;
+    caption-side: bottom;
+    text-align: center;
+   vertical-align: bottom;
+	padding-top:33px;
+ }

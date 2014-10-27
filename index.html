@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="ng-app:weatherWidget" id="ng-app" ng-app="weatherWidget" xmlns:ng="http://angularjs.org">
+	<head>
+		<!-- Meta-Information --> <!-- etcâ€¦ --> <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com --> <!-- etcâ€¦ --> <!-- Our Website CSS Styles -->
+		<meta charset="utf-8">
+		<title>Weather Widget</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Oluwatoni Fuwape">
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="app.js"></script>
+		<!--[if lte IE 8]>
+		<script>
+			document.createElement('ng-include');
+			document.createElement('ng-pluralize');
+			document.createElement('ng-view');
+			document.createElement('ng:include');
+			document.createElement('ng:pluralize');
+			document.createElement('ng:view');
+		</script>
+		<![endif]-->
+		<!--[if lt IE 8]>
+		<script src="js/json2.js"></script>
+		<![endif]-->
+		<!--[if lte IE 8]> <script src="ieshiv.js"></script><![endif]-->
+		<!--[if IE 9]>
+		<script src="xdomain.js"></script>
+		<script>
+			xdomain.slaves({
+			  'http://www.example.co.uk': '/web/IE9/proxy.html'
+			});
+		</script>
+		<![endif]-->
+	</head>
+	<body>
+		<div ng-view></div>
+		<div ng-view ng-app="myapp" id="ng-app" class="content" ng-controller="ForecastController">
+			<p class="location">{{title}}</p>
+			<p class="temp"> {{currentTemp}}&deg </p>
+			<figure>
+				<img class="image" src="{{image_url}}" alt="Cloud Description" >
+				<br/>
+				<figcaption class="caption">{{visual}}</figcaption>
+			</figure>
+			<br/>
+			<div id="temps">
+				<ul class="remtemps" ng-repeat="eachForecast in forecast">
+					<li ng-show="!$last" class="divr">
+						{{eachForecast.day}}
+						<br/>
+						{{eachForecast.high}}&deg / {{eachForecast.low}}&deg
+					</li>
+					<li ng-show="$last">
+						{{eachForecast.day}}
+						<br/>
+						{{eachForecast.high}}&deg / {{eachForecast.low}}&deg
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
