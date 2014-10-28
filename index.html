@@ -47,7 +47,7 @@
 			</figure>
 			<br/>
 			<div id="temps">
-				<ul class="remtemps" ng-repeat="eachForecast in forecast">
+				<ul class="remtemps" ng-repeat="eachForecast in forecast |limitTo: 5" >
 					<li ng-show="!$last" class="divr">
 						{{eachForecast.day}}
 						<br/>
